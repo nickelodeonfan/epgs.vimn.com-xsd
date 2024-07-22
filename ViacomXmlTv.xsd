@@ -1,0 +1,378 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="tv" nillable="true" type="tv" />
+  <xs:complexType name="tv">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="channel" type="channel" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="programme" type="programme" />
+    </xs:sequence>
+    <xs:attribute name="date" type="xs:string" />
+    <xs:attribute name="source-info-url" type="xs:string" />
+    <xs:attribute name="source-info-name" type="xs:string" />
+    <xs:attribute name="source-data-url" type="xs:string" />
+    <xs:attribute name="generator-info-name" type="xs:string" />
+    <xs:attribute name="generator-info-url" type="xs:string" />
+  </xs:complexType>
+  <xs:complexType name="channel">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="display-name" type="displayname" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="icon" type="icon" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="url" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute name="id" type="xs:string" />
+  </xs:complexType>
+  <xs:complexType name="displayname">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="lang" type="xs:string" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="icon">
+    <xs:attribute name="src" type="xs:string" />
+    <xs:attribute name="width" type="xs:string" />
+    <xs:attribute name="height" type="xs:string" />
+  </xs:complexType>
+  <xs:complexType name="programme">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="title" type="title" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="stunt-title" type="stunttitle" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="sub-title" type="subtitle" />
+      <xs:element minOccurs="0" maxOccurs="1" name="original-title" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="original-episode-title" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="format_desc" type="desc" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="format_desc_short" type="desc" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="desc" type="desc" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="desc_short" type="desc" />
+      <xs:element minOccurs="0" maxOccurs="1" name="keywords" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="dvb_event_id" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="aspect_ratio" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="allocations" type="allocations" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="genre" type="genre" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="dvbsi_genre" type="dvbsigenre" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ott_mobile" type="xs:boolean" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ott_internet" type="xs:boolean" />
+      <xs:element minOccurs="0" maxOccurs="1" name="tve_mobile" type="xs:boolean" />
+      <xs:element minOccurs="0" maxOccurs="1" name="tve_internet" type="xs:boolean" />
+      <xs:element minOccurs="0" maxOccurs="1" name="vod_catchup" type="xs:boolean" />
+      <xs:element minOccurs="0" maxOccurs="1" name="start_over" type="xs:boolean" />
+      <xs:element minOccurs="0" maxOccurs="1" name="npvr" type="xs:boolean" />
+      <xs:element minOccurs="0" maxOccurs="1" name="pvr_sideloading" type="xs:boolean" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="production_year" type="productionyear" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="image" type="image" />
+      <xs:element minOccurs="0" maxOccurs="1" name="credits" type="credits" />
+      <xs:element minOccurs="0" maxOccurs="1" name="date" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="category" type="category" />
+      <xs:element minOccurs="0" maxOccurs="1" name="language" type="language" />
+      <xs:element minOccurs="0" maxOccurs="1" name="orig-language" type="origlanguage" />
+      <xs:element minOccurs="0" maxOccurs="1" name="length" type="length" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="icon" type="icon" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="url" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="production-country" type="ArrayOfCountry" />
+      <xs:element minOccurs="0" maxOccurs="1" name="audio_list" type="audio_list" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="episode-type" type="episodetype" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="episode-num" type="episodenum" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="season-num" type="seasonnum" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="identifier" type="identifier" />
+      <xs:element minOccurs="0" maxOccurs="1" name="season_id" type="identifier" />
+      <xs:element minOccurs="0" maxOccurs="1" name="series_id" type="identifier" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="format_id" type="formatid" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="sendungs_id" type="sendungsid" />
+      <xs:element minOccurs="0" maxOccurs="1" name="video" type="video" />
+      <xs:element minOccurs="0" maxOccurs="1" name="audio" type="audio" />
+      <xs:element minOccurs="0" maxOccurs="1" name="previously-shown" type="previouslyshown" />
+      <xs:element minOccurs="0" maxOccurs="1" name="premiere" type="premiere" />
+      <xs:element minOccurs="0" maxOccurs="1" name="last-chance" type="lastchance" />
+      <xs:element minOccurs="0" maxOccurs="1" name="new" type="new" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="subtitles" type="subtitles" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="rating" type="rating_sensei" />
+      <xs:element minOccurs="0" maxOccurs="1" name="nicam_classification" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="contains_violence" type="xs:boolean" />
+      <xs:element minOccurs="0" maxOccurs="1" name="contains_sex" type="xs:boolean" />
+      <xs:element minOccurs="0" maxOccurs="1" name="contains_foul_language" type="xs:boolean" />
+      <xs:element minOccurs="0" maxOccurs="1" name="contains_drugs" type="xs:boolean" />
+      <xs:element minOccurs="0" maxOccurs="1" name="contains_discrimination" type="xs:boolean" />
+      <xs:element minOccurs="0" maxOccurs="1" name="contains_fear" type="xs:boolean" />
+      <xs:element minOccurs="0" maxOccurs="1" name="virginCatchup" type="xs:boolean" />
+      <xs:element minOccurs="0" maxOccurs="1" name="reverseEPG" type="xs:boolean" />
+      <xs:element minOccurs="0" maxOccurs="1" name="startOverInHome" type="xs:boolean" />
+      <xs:element minOccurs="0" maxOccurs="1" name="startOverOutOfHome" type="xs:boolean" />
+      <xs:element minOccurs="0" maxOccurs="1" name="inHomeStreaming" type="xs:boolean" />
+      <xs:element minOccurs="0" maxOccurs="1" name="outHomeStreaming" type="xs:boolean" />
+      <xs:element minOccurs="0" maxOccurs="1" name="inHomeDownload" type="xs:boolean" />
+      <xs:element minOccurs="0" maxOccurs="1" name="outHomeDownload" type="xs:boolean" />
+      <xs:element minOccurs="0" maxOccurs="1" name="numberDownloads" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="downloadExpireDuration" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="downloadWatchDuration" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="downloadAvailableDuration" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="star-rating" type="starrating" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="review" type="review" />
+      <xs:element minOccurs="1" maxOccurs="1" name="audio_described" type="xs:boolean" />
+      <xs:element minOccurs="1" maxOccurs="1" name="invision_signing" type="xs:boolean" />
+    </xs:sequence>
+    <xs:attribute name="is_live" type="xs:boolean" />
+    <xs:attribute name="start" type="xs:string" />
+    <xs:attribute name="air_time_start" type="xs:string" />
+    <xs:attribute name="air_time_end" type="xs:string" />
+    <xs:attribute name="stop" type="xs:string" />
+    <xs:attribute name="start_utc" type="xs:string" />
+    <xs:attribute name="stop_utc" type="xs:string" />
+    <xs:attribute name="air_time_start_utc" type="xs:string" />
+    <xs:attribute name="air_time_end_utc" type="xs:string" />
+    <xs:attribute name="pdc-start" type="xs:string" />
+    <xs:attribute name="vps-start" type="xs:string" />
+    <xs:attribute name="showview" type="xs:string" />
+    <xs:attribute name="videoplus" type="xs:string" />
+    <xs:attribute name="channel" type="xs:string" />
+    <xs:attribute default="0/1" name="clumpidx" type="xs:string" />
+  </xs:complexType>
+  <xs:complexType name="title">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="lang" type="xs:string" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="stunttitle">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="lang" type="xs:string" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="subtitle">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="lang" type="xs:string" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="desc">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="lang" type="xs:string" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="allocations">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="allocation" type="allocation" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="allocation">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="optOutTypes" type="optOutTypes" />
+    </xs:sequence>
+    <xs:attribute name="start" type="xs:string" />
+    <xs:attribute name="stop" type="xs:string" />
+  </xs:complexType>
+  <xs:complexType name="optOutTypes">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="optOutType" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="genre">
+    <xs:simpleContent>
+      <xs:extension base="xs:string" />
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="dvbsigenre">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="level1" type="xs:string" />
+        <xs:attribute name="level2" type="xs:string" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="productionyear">
+    <xs:simpleContent>
+      <xs:extension base="xs:string" />
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="image">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="type" type="xs:string" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="credits">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="director" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="actor" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="writer" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="adapter" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="producer" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="composer" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="editor" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="presenter" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="commentator" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="guest" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="category">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="lang" type="xs:string" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="language">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="lang" type="xs:string" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="origlanguage">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="lang" type="xs:string" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="length">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="units" type="lengthUnits" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="lengthUnits">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="seconds" />
+      <xs:enumeration value="minutes" />
+      <xs:enumeration value="hours" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="ArrayOfCountry">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="country" type="country" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="country">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="lang" type="xs:string" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="audio_list">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="audio" type="audio_sensei" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="audio_sensei">
+    <xs:attribute name="audio_name" type="xs:string" />
+    <xs:attribute name="audio_type" type="xs:string" />
+    <xs:attribute name="consec_number" type="xs:string" />
+    <xs:attribute name="language" type="xs:string" />
+  </xs:complexType>
+  <xs:complexType name="episodetype">
+    <xs:simpleContent>
+      <xs:extension base="xs:string" />
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="episodenum">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute default="onscreen" name="system" type="xs:string" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="seasonnum">
+    <xs:simpleContent>
+      <xs:extension base="xs:string" />
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="identifier">
+    <xs:simpleContent>
+      <xs:extension base="xs:string" />
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="formatid">
+    <xs:simpleContent>
+      <xs:extension base="xs:string" />
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="sendungsid">
+    <xs:simpleContent>
+      <xs:extension base="xs:string" />
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="video">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="present" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="colour" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="aspect" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="quality" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="audio">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="present" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="stereo" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="previouslyshown">
+    <xs:attribute name="start" type="xs:string" />
+    <xs:attribute name="channel" type="xs:string" />
+  </xs:complexType>
+  <xs:complexType name="premiere">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="lang" type="xs:string" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="lastchance">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="lang" type="xs:string" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="new" />
+  <xs:complexType name="subtitles">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="language" type="language" />
+    </xs:sequence>
+    <xs:attribute name="type" type="subtitlesType" />
+  </xs:complexType>
+  <xs:simpleType name="subtitlesType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="teletext" />
+      <xs:enumeration value="onscreen" />
+      <xs:enumeration value="deaf-signed" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="rating_sensei" mixed="true">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="icon" type="icon" />
+    </xs:sequence>
+    <xs:attribute name="system" type="xs:string" />
+    <xs:attribute name="guidance" type="xs:string" />
+  </xs:complexType>
+  <xs:complexType name="starrating">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="value" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="icon" type="icon" />
+    </xs:sequence>
+    <xs:attribute name="system" type="xs:string" />
+  </xs:complexType>
+  <xs:complexType name="review">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="type" type="reviewType" use="required" />
+        <xs:attribute name="source" type="xs:string" />
+        <xs:attribute name="reviewer" type="xs:string" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="reviewType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="text" />
+      <xs:enumeration value="url" />
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>
